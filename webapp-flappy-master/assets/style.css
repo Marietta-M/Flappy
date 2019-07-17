@@ -1,0 +1,14 @@
+h1 {
+  color: #2cea0b;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: bold
+}
+
+.rules {
+  color: orange
+}
+
+#help {
+  color: red
+}

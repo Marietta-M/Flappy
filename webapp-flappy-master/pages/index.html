@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title> Flappy Birdy! </title>
+  <link rel="stylesheet" href="../assets/style.css"/>
+  <script language="JavaScript">
+    <!--
+    //you can assign the initial color of the background here
+    r=255;
+    g=255;
+    b=255;
+    flag=0;
+    t=new Array;
+    o=new Array;
+    d=new Array;
+
+    function hex(a,c)
+    {
+    t[a]=Math.floor(c/16)
+    o[a]=c%16
+    switch (t[a])
+    {
+    case 10:
+    t[a]='A';
+    break;
+    case 11:
+    t[a]='B';
+    break;
+    case 12:
+    t[a]='C';
+    break;
+    case 13:
+    t[a]='D';
+    break;
+    case 14:
+    t[a]='E';
+    break;
+    case 15:
+    t[a]='F';
+    break;
+    default:
+    break;
+    }
+    switch (o[a])
+    {
+    case 10:
+    o[a]='A';
+    break;
+    case 11:
+    o[a]='B';
+    break;
+    case 12:
+    o[a]='C';
+    break;
+    case 13:
+    o[a]='D';
+    break;
+    case 14:
+    o[a]='E';
+    break;
+    case 15:
+    o[a]='F';
+    break;
+    default:
+    break;
+    }
+    }
+
+    function ran(a,c)
+    {
+    if ((Math.random()>2/3||c==0)&&c<255)
+    {
+    c++
+    d[a]=2;
+    }
+    else
+    {
+    if ((Math.random()<=1/2||c==255)&&c>0)
+    {
+    c--
+    d[a]=1;
+    }
+    else d[a]=0;
+    }
+    return c
+    }
+    function do_it(a,c)
+    {
+    if ((d[a]==2&&c<255)||c==0)
+    {
+    c++
+    d[a]=2
+    }
+    else
+    if ((d[a]==1&&c>0)||c==255)
+    {
+    c--;
+    d[a]=1;
+    }
+    if (a==3)
+    {
+    if (d[1]==0&&d[2]==0&&d[3]==0)
+    flag=1
+    }
+    return c
+    }
+    function disco()
+    {
+    if (flag==0)
+    {
+    r=ran(1, r);
+    g=ran(2, g);
+    b=ran(3, b);
+    hex(1,r)
+    hex(2,g)
+    hex(3,b)
+    document.body.style.background="#"+t[1]+o[1]+t[2]+o[2]+t[3]+o[3]
+    flag=50
+    }
+    else
+    {
+    r=do_it(1, r)
+    g=do_it(2,g)
+    b=do_it(3,b)
+    hex(1,r)
+    hex(2,g)
+    hex(3,b)
+    document.body.style.background="#"+t[1]+o[1]+t[2]+o[2]+t[3]+o[3]
+    flag--
+    }
+
+    setTimeout('disco()',50)
+    }
+    //-->
+    </script>
+
+</head>
+
+<body onload="disco()">
+
+  <h1> Flappy Birdy! </h1>
+  <p> Welcome to Flappy Bird. </p>
+  <p> Here will be the game. </p>
+  <p> How to play: </p>
+
+
+
+  <ul>
+    <li class = "rules"> Press SPACE to flap your wings. </li>
+    <li class = "rules"> Avoid the pipes. </li>
+    <li class = "rules"> If you crash, just try again! </li>
+    <li  id="help">
+     <a href="example.html"id="help">help</a>
+    </li>
+  </ul>
+  <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=cambridge&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+</body>
+
+</html>
